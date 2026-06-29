@@ -1,11 +1,8 @@
 import pandas as pd
-
-
 def clean_dataframe(df, table_name):
     """
     Cleans a dataframe before loading into MySQL.
     """
-
     # Replace \N with NULL
     df = df.replace(r"\N", pd.NA)
 
@@ -19,5 +16,4 @@ def clean_dataframe(df, table_name):
                 columns={"rank": "fastestLapRank"},
                 inplace=True
             )
-
     return df
